@@ -67,7 +67,7 @@ To rewrite the above with LESS i made some assumptions:
 * support  IE6/7: No
 * box-sizing: border-box
 * zen-direction: left
-* zen-grid-container don't applies `context`, so no sub grids allowed for now?
+* zen-grid-container don't implements `context`, so no sub grids allowed for now?
 
 Drop IE6/7 seems a little weird cause this browsers are the problem in some way. Or not?
 If you need the IE6/7, please let me know. It is easy to build in.
