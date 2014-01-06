@@ -1,0 +1,30 @@
+@import "variables.less";
+@import "boxsizing.less";
+@import "mixins.less";
+
+@zen-columns: 7; // Set the total number of columns in the grid.
+@zen-gutter-width: 10px; // Set the gutter size. A half-gutter is used on each side of each column.
+
+.container {
+ .zen-grid-container; // Apply this mixin to the container.
+}
+
+.aside1 {
+ .zen-grid-item(2, 1); // Apply this mixin for each grid item in the container.
+}
+
+.content {
+ .zen-grid-item(4, 3); // Make this grid item span 4 columns. // Position this grid item in the 3rd column.
+}
+
+.aside2 {
+ .zen-grid-item(1, 7);
+}
+
+.footer1 {
+ .zen-new-row(); // Apply this mixin to start a new row.
+ .zen-grid-item(3, 5);
+}
+.footer2 {
+ .zen-grid-item(4, 1);
+}

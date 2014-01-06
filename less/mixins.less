@@ -1,0 +1,52 @@
+//
+// Apply this to create a grid container element.
+// @see http://next.zengrids.com/reference/grids/#zen-grid-container
+//
+.zen-grid-container(
+  @gutters          : @zen-gutters,
+) 
+{
+  // We use the "micro clearfix", instead of Compass' clearfix or pie-clearfix.
+  &:before,
+  &:after {
+    content: "";
+    display: table;
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+.zen-grid-item(
+  @column-span,
+  @column-position,
+  @columns                      : @zen-columns,
+  @gutters                      : @zen-gutters,
+  @grid-width                   : @zen-grid-width
+) {
+
+  // Calculate the unit width.
+  @unit-width: @grid-width / @columns;
+
+  // Calculate the item's width.
+  @width: (@column-span * @unit-width) - @gutters;
+  
+
+  // Calculate the margin from the container's edge.
+  @margin: (@column-position - 1) * @unit-width;
+
+  float: left;
+  width: @width;
+  margin-left: @margin;
+  margin-right: -100%;
+ 
+
+  // Auto-apply the unit base mixin.
+  //@if @auto-include-grid-item-base {
+  //  @include zen-grid-item-base(@gutters, @gutter-method, @box-sizing, @direction, @switch-direction, @auto-include-box-sizing);
+  //}
+}
+
+.zen-new-row() {
+    clear: left;
+}
