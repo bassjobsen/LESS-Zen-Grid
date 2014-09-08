@@ -29,7 +29,7 @@
   @unit-width: @grid-width / @columns;
 
   // Calculate the item's width.
-  @width: (@column-span * @unit-width) - @gutters;
+  @width: (@column-span * @unit-width); //- @gutters;
   
 
   // Calculate the margin from the container's edge.
@@ -39,7 +39,7 @@
   width: @width;
   margin-left: @margin;
   margin-right: -100%;
- 
+  padding: 0 @gutters/2;
 
   // Auto-apply the unit base mixin.
   //@if @auto-include-grid-item-base {
